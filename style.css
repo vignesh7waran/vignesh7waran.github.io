@@ -1,0 +1,160 @@
+/* ---------- Theme (black & white only) ---------- */
+:root {
+  --bg: #ffffff;
+  --ink: #0a0a0a;
+  --muted: #5c5c5c;
+  --line: #e5e5e5;
+  --bubble: #f2f2f2;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --display: 'Archivo', system-ui, sans-serif;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --bg: #000000;
+  --ink: #f5f5f5;
+  --muted: #a3a3a3;
+  --line: #2a2a2a;
+  --bubble: #161616;
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.6;
+  transition: background .2s, color .2s;
+}
+a { color: var(--ink); }
+button { font: inherit; cursor: pointer; }
+a:focus-visible, button:focus-visible { outline: 2px solid #737373; outline-offset: 3px; border-radius: 8px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+
+/* ---------- Layout: one screen ---------- */
+.page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(48px, 9vh, 88px) clamp(20px, 5vw, 32px) 16px;
+}
+
+/* ---------- Theme button ---------- */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: clamp(16px, 4vw, 32px);
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 0; color: var(--ink);
+}
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* ---------- Name + intro screen ---------- */
+.hero { margin: 0; min-height: 62px; display: flex; align-items: center; font-weight: 400; }
+.screen {
+  display: inline-flex; align-items: center; gap: 4px;
+  min-height: 52px; padding: 8px 0;
+  font-family: var(--mono); font-weight: 500;
+  font-size: clamp(16px, 2.4vw, 20px); line-height: 1;
+  letter-spacing: .04em; white-space: pre;
+}
+.cursor { display: inline-block; width: .55em; height: 1em; background: var(--ink); animation: blink .8s steps(1) infinite; }
+.name {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(30px, 5.6vw, 50px); line-height: 1.1; letter-spacing: .03em;
+}
+.name.reveal { animation: reveal .7s steps(14); }
+[hidden] { display: none !important; }
+
+.sub { margin: 6px 0 0; font-size: 13px; }
+.status { margin: 36px 0 0; font-size: 13px; letter-spacing: .04em; }
+.lead { margin: 10px 0 0; font-size: clamp(18px, 2.3vw, 21px); line-height: 1.5; }
+.lead + .muted { margin: 10px 0 0; }
+
+/* ---------- Icons ---------- */
+.links { display: flex; gap: 4px; margin: 22px 0 0 -10px; }
+.links a { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: var(--ink); }
+
+/* ---------- Projects ---------- */
+.label { margin: 32px 0 6px; font-size: 12px; }
+.projects { display: flex; flex-direction: column; }
+.proj {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px;
+  margin: 0 -12px; padding: 10px 12px; border-radius: 10px;
+  text-decoration: none; color: var(--ink); transition: background .2s;
+}
+.proj b { font-weight: 600; }
+.proj .arr { margin-top: 5px; transition: transform .2s; }
+.proj .key { grid-column: 1 / -1; font-size: 12px; }
+.proj:hover { background: rgba(128, 128, 128, .09); }
+.proj:hover .arr { transform: translate(3px, -3px); }
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 0 20px 24px;
+  text-align: center; font-size: 14px; color: var(--muted);
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+/* ---------- v-mini bot ---------- */
+.bot {
+  position: absolute; z-index: 5;
+  left: calc(100% - 68px); top: calc(100% - 76px);
+  width: 44px; height: 44px;
+  transition: left 1.8s ease-out, top 1.8s ease-out;
+}
+.bot-btn { width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; color: var(--ink); }
+.bot .eye { fill: var(--bg); transform-box: fill-box; transform-origin: center; animation: eyeblink 4s infinite; }
+.tip {
+  position: absolute; top: 6px; right: 52px;
+  padding: 5px 11px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg); color: var(--ink); font-size: 12px; white-space: nowrap; pointer-events: none;
+  animation: fadein .4s ease-out;
+}
+.tip.left { right: auto; left: 52px; }
+
+/* ---------- Chat ---------- */
+.chat {
+  position: absolute; z-index: 6; right: 24px; bottom: 96px;
+  width: 320px; max-width: calc(100% - 48px);
+  border: 1px solid var(--line); border-radius: 14px; background: var(--bg); overflow: hidden;
+}
+.chat-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 6px 6px 6px 16px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.chat-head b { font-weight: 500; }
+.chat-close { width: 44px; height: 44px; background: transparent; border: 0; color: var(--ink); font-size: 20px; }
+.chat-body { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; min-height: 120px; font-size: 15px; line-height: 1.5; }
+.msg { max-width: 92%; padding: 7px 12px; }
+.msg.bot-msg { align-self: flex-start; border-radius: 12px 12px 12px 4px; background: var(--bubble); }
+.msg.you { align-self: flex-end; max-width: 85%; border-radius: 12px 12px 4px 12px; background: var(--ink); color: var(--bg); }
+.chat-qs { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 16px; }
+.chat-qs button { min-height: 40px; padding: 6px 12px; background: transparent; border: 1px solid var(--line); border-radius: 20px; color: var(--ink); font-size: 14px; text-align: left; }
+.chat-qs button:hover { border-color: var(--muted); }
+
+/* ---------- Animations ---------- */
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes reveal { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes eyeblink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.15); } }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor, .name.reveal, .bot .eye, .tip { animation: none; }
+  .bot, .proj, .proj .arr { transition: none; }
+}

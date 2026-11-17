@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigneshwaran S</title>
+  <meta name="description" content="Vigneshwaran S, 3rd-year B.Tech IT student building LLM apps, AI agents and useful software.">
+  <meta property="og:title" content="Vigneshwaran S">
+  <meta property="og:description" content="Building with LLMs, experimenting with AI agents, and turning complex ideas into useful applications.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
+</head>
+<body>
+  <div class="page" id="page">
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+
+    <main class="main">
+      <h1 class="hero">
+        <span class="sr-only">Vigneshwaran S</span>
+        <span class="screen" id="screen" aria-hidden="true" hidden><span id="typed"></span><span class="cursor"></span></span>
+        <span class="name" id="name" aria-hidden="true">VIGNESHWARAN S</span>
+      </h1>
+      <p class="mono muted sub">3rd-year B.Tech IT, Kongu Engineering College</p>
+
+      <p class="mono status">[ MODEL TRAINING IN PROGRESS ]</p>
+      <p class="lead">Building with LLMs, experimenting with AI agents, and turning complex ideas into useful applications.</p>
+      <p class="muted">Currently fine-tuning on local models, RAG and agents.</p>
+
+      <nav class="links" aria-label="Profiles">
+        <a href="https://github.com/Vignesh14007" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/vigneshwaran14007/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10v9M6 5v.01M11 19v-9M18 19v-5a4 4 0 0 0-7 0"/></svg>
+        </a>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path d="M13 3v6h6"/><path d="M12 12v6M9.5 15.5 12 18l2.5-2.5"/></svg>
+        </a>
+      </nav>
+
+      <p class="mono muted label">things I've built</p>
+      <div class="projects">
+        <a class="proj" href="https://github.com/Vignesh14007/smart-grid-genai" target="_blank" rel="noopener">
+          <span><b>Smart Grid GenAI</b> <span class="muted">Talk to power-grid data in plain English.</span></span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="mono muted key">your question → Llama 3 writes SQL → PostgreSQL answers</span>
+        </a>
+        <a class="proj" href="https://github.com/Vignesh14007/sovereign-ai" target="_blank" rel="noopener">
+          <span><b>Sovereign AI</b> <span class="muted">A private AI assistant for companies, fully offline.</span></span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="mono muted key">local LLMs + RAG on private files, built for Smart India Hackathon</span>
+        </a>
+        <a class="proj" href="https://github.com/Vignesh14007/CLUE" target="_blank" rel="noopener">
+          <span><b>CLUE</b> <span class="muted">An AI that plans my week and emails me reminders.</span></span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <span class="mono muted key">n8n + Gemini + Gmail, runs on autopilot</span>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 vigneshwaran s</span>
+      <span>contact me at ad "@" vigneshwarans "dot" me</span>
+    </footer>
+
+    <!-- v-mini chat -->
+    <section class="chat" id="chat" aria-label="v-mini chat" hidden>
+      <div class="chat-head">
+        <span class="mono"><b>v-mini</b> <span class="muted">tiny scripted model</span></span>
+        <button type="button" class="chat-close" id="chat-close" aria-label="Close chat">×</button>
+      </div>
+      <div class="chat-body" id="chat-body" aria-live="polite"></div>
+      <div class="chat-qs" id="chat-qs"></div>
+    </section>
+
+    <div class="bot" id="bot">
+      <span class="tip mono" id="tip" aria-hidden="true">psst, I'm v-mini, a tiny model</span>
+      <button type="button" class="bot-btn" id="bot-btn" aria-label="Open v-mini chat, ask me about V">
+        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M5 12h-2M5 20h-2M27 12h2M27 20h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <rect x="5" y="5" width="22" height="22" rx="6" fill="currentColor"/>
+          <rect class="eye" x="10.5" y="12" width="3" height="7" rx="1.5"/>
+          <rect class="eye" x="18.5" y="12" width="3" height="7" rx="1.5"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
